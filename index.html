@@ -1,11 +1,3 @@
-<input 
-id=" name"
-name="name"
-type="text"
-class = "form-input"
-placeholder="Your Name"
-/>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +11,6 @@ placeholder="Your Name"
     <h1>North Sussex Judo</h1>
     <div id="results" class="wrapper">
       <form id="form" novalidate>
-      <form id="form">
         <h2>Cost Calculator</h2>
         <hr />
 
@@ -33,86 +24,90 @@ placeholder="Your Name"
           <div id="athlete-name-error"></div>
         </div>
 
-
-          
-          <div class="training-plan-wrapper" role="radiogroup">
-            <label>Training Plan</label>
-            <div class="radio-button-field">
-              <input
-                id="beginner"
-                type="radio"
-                name="training-plan"
-                value="beginner"
-                required
-                checked
-              />
-              <label for="beginner">Beginner - 2 sessions p/wk</label>
-            </div>
-
-            <div class="radio-button-field">
-              <input
-                id="intermediate"
-                type="radio"
-                name="training-plan"
-                value="intermediate"
-                required
-              />
-              <label for="intermediate">Intermediate - 3 sessions p/wk</label>
-            </div>
-
-            <div class="radio-button-field">
-              <input
-                id="elite"
-                type="radio"
-                name="training-plan"
-                value="elite"
-                required
-              />
-              <label for="elite">Elite - 5 sessions p/wk</label>
-            </div>
-            <!-- Error div here -->
+        <div class="training-plan-wrapper" role="radiogroup">
+          <label>Training Plan</label>
+          <div class="radio-button-field">
+            <input
+              id="beginner"
+              type="radio"
+              name="training-plan"
+              value="beginner"
+              required
+              checked
+            />
+            
+            <label for="beginner">Beginner - 2 sessions p/wk</label>
+            <div id="beginner-error"></div>
           </div>
 
-          <div>
-            <label for="current-weight">Current Weight (kg)</label>
+          <div class="radio-button-field">
             <input
-              type="number"
-              id="current-weight"
-              name="current-weight"
+              id="intermediate"
+              type="radio"
+              name="training-plan"
+              value="intermediate"
               required
             />
-            <div id="current-weight-error"></div>
-          </div>
-          
-
-          <div>
-            <label for="competitions-entered"
-              >Number of Competitions Entered this Month (Optional)</label
-            >
-            <input
-              type="number"
-              id="competitions-entered"
-              name="competitions-entered"
             
-            />
-            <div id="competitions-entered-error"></div>
+            <label for="intermediate">Intermediate - 3 sessions p/wk</label>
+            <div id="intermediate-error"></div>
           </div>
 
-          <div>
-            <label for="private-coaching-hours"
-              >Number of Hours of Private Coaching (Optional)</label
-            >
+          <div class="radio-button-field">
             <input
-              type="number"
-              id="private-coaching-hours"
-              name="private-coaching-hours"              
+              id="elite"
+              type="radio"
+              name="training-plan"
+              value="elite"
+              required
             />
-            <div id="private-coaching-hours-error"></div>
-          </div>
+            
+            <label for="elite">Elite - 5 sessions p/wk</label>
+            <div id="elite-error"></div>
 
-          <div>
-            <button type="submit" id="submit-button">Submit</button>
+            <div id="training-plan-error"></div>
           </div>
+          <!-- Error div here -->
+        </div>
+
+        <div>
+          <label for="current-weight">Current Weight (kg)</label>
+          <input
+            type="number"
+            id="current-weight"
+            name="current-weight"
+            required
+          />
+          <div id="current-weight-error"></div>
+        </div>
+
+        <div>
+          <label for="competitions-entered"
+            >Number of Competitions Entered this Month (Optional)</label
+          >
+          <input
+            type="number"
+            id="competitions-entered"
+            name="competitions-entered"
+            required
+          />
+          <div id="competitions-entered-error"></div>
+        </div>
+
+        <div>
+          <label for="private-coaching-hours"
+            >Number of Hours of Private Coaching (Optional)</label
+          >
+          <input
+            type="number"
+            id="private-coaching-hours"
+            name="private-coaching-hours"              
+          />
+          <div id="private-coaching-hours-error"></div>
+        </div>
+
+        <div>
+          <button type="submit" id="submit-button">Submit</button>
         </div>
       </form>
 

@@ -5,10 +5,11 @@ export function calculateCosts(data) {
     elite: 35.0,
   };
 
-  let competitionCosts = data.competitionsEntered * 22;
-  let costPerWeek = levelCosts[data.selectedPlan] * 4;
-  let privTuitionCost = data.coachingHours * 9.5;
-  let totalCost = competitionCosts + costPerWeek + privTuitionCost;
+  // Default to 0 if fields are not filled
+  let competitionCosts = (data.competitionsEntered || 0) * 22;
+  let costPerWeek = levelCosts[data.trainingPlan] * 4;
+  let privTuitionCost = (data.privateCoachingHours || 0) * 9.5;
+  let totalCost = (costPerWeek * 4) +  competitionCosts+ privTuitionCost;
 
   const output = {
     competitionCosts: competitionCosts.toFixed(2),

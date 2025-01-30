@@ -1,4 +1,3 @@
-// ValidateForm.js
 
 export function validateForm() {
   let athleteName = document.querySelector("#athlete-name").value;
@@ -51,11 +50,16 @@ export function validateForm() {
   if (athleteName === "") {
     addError("athlete-name", "Please input your name");
   }
-  if (isNaN(currentWeight)) {
-    addError("current-weight", "Please input your current weight");
+  if (isNaN(currentWeight) || currentWeight <= 0) {
+    addError("current-weight", "Please input a valid current weight");
   }
   if (privateCoachingHours > 5) {
     addError("private-coaching-hours", "Maximum of 5 hours a week");
+  }
+
+  // Check if competitions are entered by Beginners
+  if (trainingPlan === "beginner" && competitionsEntered > 0) {
+    addError("competitions-entered", "Beginners cannot enter competitions.");
   }
 
   // Clear previous error messages
@@ -106,6 +110,10 @@ export function validateForm() {
   };
 }
 
+
+
+
+
 // Clear error messages and reset styles on input change
 export function clearErrorStyles(inputId, errorId) {
   let inputElement = document.querySelector(inputId);
@@ -151,6 +159,51 @@ document.addEventListener("DOMContentLoaded", function () {
       clearErrorStyles(
         "#private-coaching-hours",
         "#private-coaching-hours-error"
+      );
+    });
+    
+    document
+    .querySelector("#training-plan")
+    .addEventListener("input", function () {
+      clearErrorStyles(
+        "#training-plan",
+        "#training-plan-error"
+      );
+    });
+    
+    document
+    .querySelector("#beginner")
+    .addEventListener("input", function () {
+      clearErrorStyles(
+        "#beginner",
+        "#beginner-error"
+      );
+    });
+    
+    document
+    .querySelector("#intermediate")
+    .addEventListener("input", function () {
+      clearErrorStyles(
+        "#intermediate",
+        "#intermediate-error"
+      );
+    });
+  
+    document
+    .querySelector("#elite")
+    .addEventListener("input", function () {
+      clearErrorStyles(
+        "#elite",
+        "#elite-error"
+      );
+    });
+    
+    document
+    .querySelector("#competitions-entered")
+    .addEventListener("input", function () {
+      clearErrorStyles(
+        "#competitions-entered",
+        "#competitions-entered-error"
       );
     });
 });
